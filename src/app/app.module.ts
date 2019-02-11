@@ -1,3 +1,7 @@
+/**
+ * this file is the root module
+ */
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 // import angular animations
@@ -10,19 +14,46 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 // import hammerjs
 import 'hammerjs';
+import { MatListModule } from '@angular/material/list';
+import { MenuComponent } from './menu/menu.component';
+
+/**
+ * @NgModule decorator  is a function that takes a single metadata object, whose properties are describe the module
+ */
 @NgModule({
+  /**
+   * the directives, components, pipes that belong to this module
+   */
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponent
   ],
+  /**
+   * other modules whose exported classes are needed by component templates declared in this NgModule
+   */
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatListModule
   ],
+  /**
+   * creators of services, that this NgModule contributes to the global collection of services;
+   * they become accessible in all parts of the app
+   * you can also specift providers at the component level, which is preferred
+   */
   providers: [],
+  /**
+   * the main application view, which is called "root component" which hosts all other app views
+   * only the root NgModule should set "bootstrap" property
+   */
   bootstrap: [AppComponent]
 })
-
+/**
+ * the root module
+ * it is an "NgModule class"
+ * this particular class is the "root NgModule", and we launch the app by bootstraping this "roo NgModule"
+ */
 export class AppModule { }
 
