@@ -8,6 +8,12 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // import angulat material toolbar
 import { MatToolbarModule } from '@angular/material/toolbar';
+//  import material grid list library
+import { MatGridListModule } from '@angular/material/grid-list';
+// import thr card module library
+import { MatCardModule } from '@angular/material/card';
+// import button module
+import { MatButtonModule } from '@angular/material/button';
 // import flex-layput module
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -36,7 +42,10 @@ import { MenuComponent } from './menu/menu.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     FlexLayoutModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatCardModule
   ],
   /**
    * creators of services, that this NgModule contributes to the global collection of services;
