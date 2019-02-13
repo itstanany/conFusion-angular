@@ -22,6 +22,7 @@ import { AppComponent } from './app.component';
 import 'hammerjs';
 import { MatListModule } from '@angular/material/list';
 import { MenuComponent } from './menu/menu.component';
+import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 /**
  * @NgModule decorator  is a function that takes a single metadata object, whose properties are describe the module
@@ -32,7 +33,8 @@ import { MenuComponent } from './menu/menu.component';
    */
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    DishdetailComponent
   ],
   /**
    * other modules whose exported classes are needed by component templates declared in this NgModule
