@@ -23,7 +23,7 @@ import 'hammerjs';
 import { MatListModule } from '@angular/material/list';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
-
+import { DishService } from './services/dish.service';
 /**
  * @NgModule decorator  is a function that takes a single metadata object, whose properties are describe the module
  * it's a decorator that definies the class immediately below it as an "NgModule class"
@@ -55,7 +55,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
    * they become accessible in all parts of the app
    * you can also specift providers at the component level, which is preferred
    */
-  providers: [],
+  providers: [DishService],
   /**
    * the main application view, which is called "root component" which hosts all other app views
    * only the root NgModule should set "bootstrap" property

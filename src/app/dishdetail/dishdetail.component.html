@@ -1,10 +1,5 @@
-<div class="container"
-    fxLayout="row"
-    fxLayout.sm="column"
-    fxLayout.xs="column"
-    fxLayoutAlign.gt-md="space-around center"
-    fxLayoutGap="10px" 
-    fxLayoutGap.xs="0">
+<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center"
+  fxLayoutGap="10px" fxLayoutGap.xs="0">
 
   <div fxFlex="40">
     <mat-card *ngIf="dish">
@@ -30,12 +25,13 @@
         </button>
       </mat-card-actions>
     </mat-card>
-    
+
   </div>
 
   <div fxFlex="40">
-    <h1>Comments</h1>
+
     <mat-list *ngIf="dish">
+      <h1>Comments</h1>
       <mat-list-item *ngFor="let ad of dish.comments">
         <p matLine>
           {{ad.comment}}
