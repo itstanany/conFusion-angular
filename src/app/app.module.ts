@@ -26,6 +26,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 /**
  * @NgModule decorator  is a function that takes a single metadata object, whose properties are describe the module
+ * it's a decorator that definies the class immediately below it as an "NgModule class"
  */
 @NgModule({
   /**
