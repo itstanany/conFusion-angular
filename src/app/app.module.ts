@@ -30,6 +30,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { PromotionService } from './services/promotion.service';
 /**
  * @NgModule decorator  is a function that takes a single metadata object, whose properties are describe the module
  * it's a decorator that definies the class immediately below it as an "NgModule class"
@@ -67,7 +68,9 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
    * they become accessible in all parts of the app
    * you can also specift providers at the component level, which is preferred
    */
-  providers: [DishService],
+  providers: [DishService,
+  PromotionService
+  ],
   /**
    * the main application view, which is called "root component" which hosts all other app views
    * only the root NgModule should set "bootstrap" property
