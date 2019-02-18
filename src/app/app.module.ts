@@ -31,6 +31,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PromotionService } from './services/promotion.service';
+
+import { LeaderService } from './services/leader.service';
 /**
  * @NgModule decorator  is a function that takes a single metadata object, whose properties are describe the module
  * it's a decorator that definies the class immediately below it as an "NgModule class"
@@ -69,7 +71,8 @@ import { PromotionService } from './services/promotion.service';
    * you can also specift providers at the component level, which is preferred
    */
   providers: [DishService,
-  PromotionService
+  PromotionService,
+  LeaderService
   ],
   /**
    * the main application view, which is called "root component" which hosts all other app views

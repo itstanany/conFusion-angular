@@ -39,4 +39,20 @@ fxLayoutGap="10px"
     </p>
   </mat-card-content>
 </mat-card>
+<mat-card *ngIf="leader" fxFlex>
+  <mat-card-header>
+    <h1>
+      {{leader.name}} {{leader.abbr}}
+    </h1>
+  </mat-card-header>
+  <img mat-card-image src={{leader.image}} alt={{leader.name}}>
+  <mat-card-content>
+    <h3>
+      {{leader.designation}}
+    </h3>
+    <h5>
+      {{leader.description}}
+    </h5>
+  </mat-card-content>
+</mat-card>
 </div>
