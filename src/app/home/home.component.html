@@ -42,7 +42,7 @@ fxLayoutGap="10px"
 <mat-card *ngIf="leader" fxFlex>
   <mat-card-header>
     <h1>
-      {{leader.name}} {{leader.abbr}}
+      {{leader.name | uppercase}} {{leader.abbr | uppercase}}
     </h1>
   </mat-card-header>
   <img mat-card-image src={{leader.image}} alt={{leader.name}}>

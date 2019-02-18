@@ -33,6 +33,10 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PromotionService } from './services/promotion.service';
 
 import { LeaderService } from './services/leader.service';
+import { LoginComponent } from './login/login.component';
+
+// importing Dialog Module
+import { MatDialogModule } from '@angular/material/dialog';
 /**
  * @NgModule decorator  is a function that takes a single metadata object, whose properties are describe the module
  * it's a decorator that definies the class immediately below it as an "NgModule class"
@@ -49,7 +53,8 @@ import { LeaderService } from './services/leader.service';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   /**
    * other modules whose exported classes are needed by component templates declared in this NgModule
@@ -63,8 +68,12 @@ import { LeaderService } from './services/leader.service';
     MatGridListModule,
     MatButtonModule,
     MatCardModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule
   ],
+  entryComponents: [
+    LoginComponent
+  ]
   /**
    * creators of services, that this NgModule contributes to the global collection of services;
    * they become accessible in all parts of the app
