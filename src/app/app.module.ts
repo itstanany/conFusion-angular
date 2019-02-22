@@ -14,7 +14,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 // import button module
 import { MatButtonModule } from '@angular/material/button';
+// import form modules
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule, MatInput } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
 // import flex-layput module
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
@@ -63,17 +69,21 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
     FlexLayoutModule,
     MatListModule,
     MatGridListModule,
     MatButtonModule,
     MatCardModule,
     AppRoutingModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ],
   entryComponents: [
     LoginComponent
-  ]
+  ],
   /**
    * creators of services, that this NgModule contributes to the global collection of services;
    * they become accessible in all parts of the app
