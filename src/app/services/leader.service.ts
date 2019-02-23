@@ -8,16 +8,22 @@ import { LEADERS } from '../shared/leaders';
 export class LeaderService {
   // get all leaders
   getLeaders(): Promise<Leader[]> {
-    return Promise.resolve(LEADERS);
+    return new Promise(resolve => {
+      setTimeout(() => resolve(LEADERS), 2000);
+    });
   }
 
   // get a specific leader
   getSpecificLeader(id: string): Promise<Leader> {
-    return Promise.resolve(LEADERS.filter((ldr) => (ldr.id === id))[0]);
+    return new Promise(resolve => {
+      setTimeout(() => resolve(LEADERS.filter((ldr) => (ldr.id === id))[0]), 2000);
+    });
   }
   // get a featured leader
   getFeaturedLeader(): Promise<Leader> {
-    return Promise.resolve(LEADERS.filter((ldr) => ldr.featured )[0]);
+    return new Promise(resolve => {
+      setTimeout( () => resolve(LEADERS.filter((ldr) => (ldr.featured))[0]), 2000);
+    });
   }
   constructor( ) { }
 }

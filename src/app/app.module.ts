@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 // importing reactive forms
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // import flex-layput module
@@ -78,6 +79,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSlideToggleModule,
     MatInputModule,
     MatCheckboxModule,
+    MatProgressSpinnerModule,
     FlexLayoutModule,
     MatListModule,
     MatGridListModule,
