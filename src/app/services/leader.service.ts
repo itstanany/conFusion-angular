@@ -7,17 +7,17 @@ import { LEADERS } from '../shared/leaders';
 })
 export class LeaderService {
   // get all leaders
-  getLeaders(): Leader[] {
-    return LEADERS;
+  getLeaders(): Promise<Leader[]> {
+    return Promise.resolve(LEADERS);
   }
 
   // get a specific leader
-  getSpecificLeader(id: string): Leader {
-    return LEADERS.filter((ldr) => (ldr.id === id))[0];
+  getSpecificLeader(id: string): Promise<Leader> {
+    return Promise.resolve(LEADERS.filter((ldr) => (ldr.id === id))[0]);
   }
   // get a featured leader
-  getFeaturedLeader(): Leader {
-    return LEADERS.filter((ldr) => ldr.featured )[0];
+  getFeaturedLeader(): Promise<Leader> {
+    return Promise.resolve(LEADERS.filter((ldr) => ldr.featured )[0]);
   }
   constructor( ) { }
 }

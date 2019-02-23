@@ -19,7 +19,8 @@ export class DishdetailComponent implements OnInit {
   ngOnInit() {
     // i don't know why ther is a plus + sign at the begging of the assignment expression
     const id = this.route.snapshot.params['id'];
-    this.dish = this.dishservice.getDish(id);
+    this.dishservice.getDish(id)
+    .then((dishParameter) => this.dish = dishParameter);
   }
   gotBack(): void {
     this.location.back();
