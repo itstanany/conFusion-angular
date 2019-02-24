@@ -20,7 +20,7 @@ export class DishdetailComponent implements OnInit {
     // i don't know why ther is a plus + sign at the begging of the assignment expression
     const id = this.route.snapshot.params['id'];
     this.dishservice.getDish(id)
-    .then((dishParameter) => this.dish = dishParameter);
+    .subscribe((dishParameter) => this.dish = dishParameter);
   }
   gotBack(): void {
     this.location.back();

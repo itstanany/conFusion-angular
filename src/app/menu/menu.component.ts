@@ -19,6 +19,6 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.dishService.getDishes()
-    .then((tanany) => this.dishes = tanany);
+    .subscribe((tanany) => this.dishes = tanany);
   }
 }
