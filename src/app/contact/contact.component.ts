@@ -46,7 +46,12 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
   createForm(): void {
-    this.feedbackForm = this.fb.group({
+    // ".group()" method construct new FormGroup instance
+    // "this.feedbackForm" is an instance to the method ".group()" and considered the "FORM MODEL".
+    this.feedbackForm = this.fb.group(
+      // the object that contains a collection of children of form controls,
+      // the key for each child is the name under which it is registered.
+      {
       firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
       lastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
       telnum: ['', [Validators.required, Validators.pattern]],

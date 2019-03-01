@@ -24,7 +24,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { MatSliderModule } from '@angular/material/slider';
 // import flex-layput module
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -88,7 +88,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppRoutingModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSliderModule
   ],
   entryComponents: [
     LoginComponent

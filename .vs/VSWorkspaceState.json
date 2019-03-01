@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\contact",
+    "\\src\\app\\dishdetail",
+    "\\src\\app\\shared"
+  ],
+  "SelectedNode": "\\src\\app\\dishdetail\\dishdetail.component.ts",
+  "PreviewInSolutionExplorer": false
+}
