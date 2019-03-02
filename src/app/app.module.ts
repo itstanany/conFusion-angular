@@ -52,6 +52,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { baseURL } from './shared/baseurl';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+import { FeedbackService } from './services/feedback.service';
+import { HighlightDirective } from './directives/highlight.directive';
 /**
  * @NgModule decorator  is a function that takes a single metadata object, whose properties are describe the module
  * it's a decorator that definies the class immediately below it as an "NgModule class"
@@ -69,7 +71,8 @@ import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    HighlightDirective
   ],
   /**
    * other modules whose exported classes are needed by component templates declared in this NgModule
@@ -108,6 +111,7 @@ import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
   PromotionService,
   LeaderService,
   ProcessHTTPMsgService,
+  FeedbackService,
   { provide: 'BaseURL', useValue: baseURL }
   ],
   /**

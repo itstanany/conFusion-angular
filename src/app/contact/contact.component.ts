@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Feedback, ContactType } from '../shared/feedback';
+import {FeedbackService } from '../services/feedback.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -9,7 +10,10 @@ import { Feedback, ContactType } from '../shared/feedback';
 export class ContactComponent implements OnInit {
   feedbackForm: FormGroup;
   feedback: Feedback;
+  errMess: string;
   contactType = ContactType;
+  feedbackcopy: Feedback;
+  sfeedback: Feedback;
   @ViewChild('fform') feedbackFormDirective;
 
   formErrors = {
@@ -39,7 +43,9 @@ export class ContactComponent implements OnInit {
       'email': 'Email not in valid format.'
     },
   };
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private feedbackService: FeedbackService,
+    @Inject('BaseURL') private BaseURL) {
     this.createForm();
   }
 
@@ -86,6 +92,12 @@ export class ContactComponent implements OnInit {
   }
   onSubmit() {
     this.feedback = this.feedbackForm.value;
+    this.sfeedback = this.feedbackForm.value;
+    // this.feedbackcopy.push(this.sfeedback);
+    this.feedbackcopy.push(sfeedback);
+    this.feedbackService.addFeedback(this.sfeedback)
+  .subscribe(hero => this.feedback.push(hero),
+      errmess => { this.feedback = null; this.feedbackcopy = null; this.errMess = <any>errmess; });
     console.log(this.feedback);
     this.feedbackForm.reset({
       firstname: '',
