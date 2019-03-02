@@ -48,6 +48,9 @@ import { LoginComponent } from './login/login.component';
 
 // importing Dialog Module
 import { MatDialogModule } from '@angular/material/dialog';
+
+import { HttpClientModule } from '@angular/common/http';
+import { baseURL } from './shared/baseurl';
 /**
  * @NgModule decorator  is a function that takes a single metadata object, whose properties are describe the module
  * it's a decorator that definies the class immediately below it as an "NgModule class"
@@ -89,7 +92,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSliderModule
+    MatSliderModule,
+    HttpClientModule
   ],
   entryComponents: [
     LoginComponent
@@ -101,7 +105,8 @@ import { MatDialogModule } from '@angular/material/dialog';
    */
   providers: [DishService,
   PromotionService,
-  LeaderService
+  LeaderService,
+  { provide: 'BaseURL', useValue: baseURL }
   ],
   /**
    * the main application view, which is called "root component" which hosts all other app views

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 import { Dish } from '../shared/dish';
 // the data source
-import { DISHES } from '../shared/dishes';
+// for http week 4 import { DISHES } from '../shared/dishes';
 
 import { from } from 'rxjs';
 import { DishService } from '../services/dish.service';
@@ -15,10 +15,12 @@ export class MenuComponent implements OnInit {
 
   dishes: Dish[];
 
-  constructor(private dishService: DishService) { }
-
+  // constructor(private dishService: DishService,
+    // @Inject('baseURL') private BaseURL) { }
+    constructor(private dishService: DishService,
+      @Inject('BaseURL') private BaseURL) { }
   ngOnInit() {
     this.dishService.getDishes()
-    .subscribe((tanany) => this.dishes = tanany);
+    .subscribe((dishes) => this.dishes = dishes);
   }
 }
