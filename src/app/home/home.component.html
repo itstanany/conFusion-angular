@@ -5,7 +5,7 @@ fxLayput.xs="column"
 fxLayoutAlign.gt-md="space-around center"
 fxLayoutGap="10px"
 >
-<mat-card *ngIf="dish" fxFlex>
+<mat-card *ngIf="dish" fxFlex [@expand]>
   <mat-card-header>
     <div mat-card-avatar>
 
@@ -34,7 +34,7 @@ fxLayoutGap="10px"
         {{ dishErrMess }}
       </h4>
     </div>
-<mat-card *ngIf="promotion" fxFlex>
+<mat-card *ngIf="promotion" fxFlex [@expand]>
   <mat-card-header>
     <div mat-card-avatar>
 
@@ -65,7 +65,7 @@ fxLayoutGap="10px"
         {{ promotionErrMess }}
       </h4>
     </div>
-<mat-card *ngIf="leader" fxFlex>
+<mat-card *ngIf="leader" fxFlex [@expand]>
   <mat-card-header>
     <h1>
       {{leader.name | uppercase}} {{leader.abbr | uppercase}}
