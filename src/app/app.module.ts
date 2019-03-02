@@ -51,6 +51,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { HttpClientModule } from '@angular/common/http';
 import { baseURL } from './shared/baseurl';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 /**
  * @NgModule decorator  is a function that takes a single metadata object, whose properties are describe the module
  * it's a decorator that definies the class immediately below it as an "NgModule class"
@@ -106,6 +107,7 @@ import { baseURL } from './shared/baseurl';
   providers: [DishService,
   PromotionService,
   LeaderService,
+  ProcessHTTPMsgService,
   { provide: 'BaseURL', useValue: baseURL }
   ],
   /**
