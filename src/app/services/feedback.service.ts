@@ -13,27 +13,15 @@ export class FeedbackService {
 
   constructor(private http: HttpClient,
     private processHTTPMsgService: ProcessHTTPMsgService) { }
-
-    addFeedback (feedback: Feedback): Observable<Feedback> {
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type':  'application/json',
-          'Authorization': 'my-auth-token'
-        })
-      };
-      return this.http.post<Feedback>(baseURL, feedback, httpOptions)
-        .pipe(catchError((this.processHTTPMsgService.handleError))
-        );
-    }
-    /*
-    putFeedback(feedback: Feedback): Observable<Feedback> {
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json'
-        })
-      };
-      return this.http.post<Feedback>(baseURL + 'feedback', httpOptions)
-      .pipe(catchError(this.processHTTPMsgService.handleError));
-    }
-    */
+    submitFeedback(feedback: Feedback): Observable<Feedback> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    };
+    return this.http.post<Feedback>(baseURL + 'feedback', feedback, httpOptions)
+      .pipe(catchError((this.processHTTPMsgService.handleError))
+      );
+  }
 }
+

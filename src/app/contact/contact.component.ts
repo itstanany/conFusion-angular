@@ -21,6 +21,9 @@ export class ContactComponent implements OnInit {
   feedback: Feedback;
   errMess: string;
   contactType = ContactType;
+  formDisplay: boolean;
+  feedbackSpinner: boolean;
+  submittedFlag: boolean;
   feedbackcopy: Feedback;
   sfeedback: Feedback;
   @ViewChild('fform') feedbackFormDirective;
@@ -56,6 +59,9 @@ export class ContactComponent implements OnInit {
     private feedbackService: FeedbackService,
     @Inject('BaseURL') private BaseURL) {
     this.createForm();
+    this.formDisplay = true;
+    this.feedbackSpinner = false;
+    this.submittedFlag = false;
   }
 
   ngOnInit() {
@@ -101,13 +107,36 @@ export class ContactComponent implements OnInit {
   }
   onSubmit() {
     this.feedback = this.feedbackForm.value;
-    this.sfeedback = this.feedbackForm.value;
-    // this.feedbackcopy.push(this.sfeedback);
-    this.feedbackcopy.push(sfeedback);
-    this.feedbackService.addFeedback(this.sfeedback)
-  .subscribe(hero => this.feedback.push(hero),
-      errmess => { this.feedback = null; this.feedbackcopy = null; this.errMess = <any>errmess; });
+    this.BaseURL.formDisplay = false;
+    this.feedbackSpinner = true;
+    this.BaseURL.feedbackService.submitFeedback(this.feedback)
+    .subscribe(feedback => {
+      this.feedback = feedback;
+      this.feedbackSpinner = false;
+      this.submittedFlag = true;
+    },
+    errmess => {
+      this.BaseURL.feedback = null;
+      this.errMess = <any>errmess;
+    }
+    );
     console.log(this.feedback);
+    setTimeout(() => {
+      this.BaseURL.submittedFlag = false;
+      this.BaseURL.formDisplay = true;
+      this.feedbackForm.reset({
+        firstname: '',
+      lastname: '',
+      telnum: '',
+      email: '',
+      agree: false,
+      contacttype: 'None',
+      message: ''
+      });
+    }, 5000 );
+  }
+}
+/*
     this.feedbackForm.reset({
       firstname: '',
       lastname: '',
@@ -120,3 +149,10 @@ export class ContactComponent implements OnInit {
     this.feedbackFormDirective.resetForm();
   }
 }
+*/
+
+/*
+    this.feedbackService. submitFeedback(this.sfeedback)
+   .subscribe(hero => this.feedback.push(hero),
+      errmess => { this.feedback = null; this.feedbackcopy = null; this.errMess = <any>errmess; });
+      */

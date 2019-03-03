@@ -40,14 +40,14 @@
   </div>
 
   <!--The Reactive Form-->
-  <div fxFlex fxFlexOffset="20px" class="form-size">
+  <div fxFlex fxFlexOffset="20px" class="form-size" *ngIf="formDisplay">
     <h3>
       Send Us Your Feedback
     </h3>
     <p>
       {{ feedbackForm.value | json }} {{ feedbackForm.status | json }}
     </p>
-    <form novalidate [formGroup] = "feedbackForm" (ngSubmit) = "onSubmit()">
+    <form novalidate [formGroup] = "feedbackForm" #fform="ngForm" (ngSubmit) = "onSubmit()">
       <p>
         <mat-form-field class="half-width">
           <input matInput formControlName = "firstname" placeholder="First Name" type="text" required/>
@@ -99,6 +99,34 @@
       </button>
     </form>
   </div>
-
+  <div fxFlex fxFlexOffset="20px" *ngIf="submittedFlag">
+<h4>
+  Your Submission
+</h4>
+<p>
+  First Name: {{ feedback.firstname }}
+</p>
+<p>
+  Last Name: {{ feedback.lastname }}
+</p>
+<p>
+  tel. Number: {{ feedback.telnum}}
+</p>
+<p>
+  Email: {{ feedback.email }}
+</p>
+<p>
+  Contact You? {{ feedback.agree }}
+</p>
+<p>
+  How? {{ feedback.ctype }}
+</p>
+<p>
+  Your Feedback: {{ feedback.message }}
+</p>
+  </div>
+<div *ngIf="feedbackSpinner">
+<mat-spinner></mat-spinner> <h4>Submitting Feedback .....</h4>
+</div>
 
 </div>

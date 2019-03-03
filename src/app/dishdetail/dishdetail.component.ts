@@ -119,12 +119,12 @@ export class DishdetailComponent implements OnInit {
     errmess => { this.dish = null; this.dishcopy = null; this.errMess = <any>errmess; });
     console.log(this.comment);
     console.log(this.scomform);
+    this.comformDirective.resetForm();
     this.comform.reset({
       rating: '5',
       comment: '',
       author: '',
       date: new Date()
     });
-    this.comformDirective.resetForm();
   }
 }
